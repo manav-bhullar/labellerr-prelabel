@@ -1,8 +1,25 @@
 # Labellerr pre-labelling with confidence-based review flagging
 
-Take-home (Option B) for Labellerr: pre-label ~100 images with a detector, upload the
-pre-labels to Labellerr, and flag low-confidence images for human review.
-See **[NOTE.md](NOTE.md)** for the write-up and **[SDK_FEEDBACK.md](SDK_FEEDBACK.md)** for SDK notes.
+## The assignment (Option B)
+
+> Take a small image dataset (about 100 images), use Labellerr to pre-label it with a model,
+> and flag the low-confidence images for human review. Include a short note on how you set
+> the threshold and a rough estimate of the review time saved.
+
+Also requested: anything about the Labellerr SDK or platform that was hard or could be better.
+
+## Where to find each part
+
+| Asked for | Where |
+|---|---|
+| Pre-label ~100 images with a model, via Labellerr | `pipeline/` (YOLOv8n on 100 COCO images, uploaded as Labellerr pre-annotations) |
+| Flag low-confidence images for human review | `pipeline/calibrate.py`, `results/per_image.csv` (flag + reason per image) |
+| How the threshold was set | [NOTE.md](NOTE.md), `results/threshold_curve.png` |
+| Rough estimate of review time saved | [NOTE.md](NOTE.md), `results/summary.json` |
+| What was hard / could be better | [SDK_FEEDBACK.md](SDK_FEEDBACK.md) |
+
+**Result in one line:** a threshold of 0.77 auto-accepts 32% of images at 90.6% precision and
+flags 68% for review, for a rough estimate of about 66% less labelling time.
 
 ## Run
 
