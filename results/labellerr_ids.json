@@ -1,0 +1,34 @@
+{
+  "dataset_id": "78b62c18-bfb5-4559-9e7f-4e617fec22a9",
+  "template_id": "540c7b89-329f-4a5c-a720-eaa19d678d6e",
+  "project_id": "perla_lonely_marten_34549",
+  "preannotations": {
+    "low": {
+      "sha256": "b95eb31e96f515ab819fa7545f4f27938044236ae0f3b57b13af075e0fab728c",
+      "status": "completed",
+      "n_images": 62,
+      "n_boxes": 196
+    },
+    "high": {
+      "sha256": "c9375b5857b7fbc8e551e5b955a2a7c7036fa585c3282dd47686c93e774cf07b",
+      "status": "completed",
+      "n_images": 32,
+      "n_boxes": 47
+    }
+  },
+  "bulk_assign_trial": {
+    "status": "review",
+    "attempts": [
+      {
+        "ok": false,
+        "error": "{'error': {'message': 'Validation Error', 'response': [], 'error': [{'field': 'search_queries', 'message': 'Input should be a valid list', 'type': 'list_type'}], 'tracking_id': '3e40c9d9-9429-4f3a-abb3-165fbee8a0e7'}, 'code': 400}"
+      },
+      {
+        "ok": false,
+        "error": "{'error': {'message': 'Validation Error', 'response': [], 'error': [{'field': 'search_queries', 'message': 'Input should be a valid list', 'type': 'list_type'}], 'tracking_id': '5d83e360-8b20-4c85-bb0f-44fbd7d062ca'}, 'code': 400}"
+      }
+    ],
+    "file_name": "000000013659.jpg",
+    "outcome": "failed"
+  }
+}

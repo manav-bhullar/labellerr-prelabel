@@ -81,7 +81,7 @@ def _find_file_id(project, file_name: str) -> str | None:
 
     cursor = None
     for _ in range(20):  # 20 x 50 > 100 files
-        res = project.list_files(search_queries={}, size=50, next_search_after=cursor)
+        res = project.list_files(search_queries=[], size=50, next_search_after=cursor)
         fid = walk(res)
         if fid:
             return fid
@@ -102,8 +102,11 @@ def sync(cfg: dict, image_dir: Path, images: list[dict], preds: dict, rows: list
     from labellerr.core.client import LabellerrClient
     from labellerr.core.datasets import LabellerrDataset, create_dataset_from_local
     from labellerr.core.projects import LabellerrProject, create_project
-    from labellerr.core.schemas import (AnnotationQuestion, CreateProjectParams, CreateTemplateParams,
-                                        DatasetConfig, DatasetDataType, QuestionType, RotationConfig)
+    from labellerr.core.schemas import (AnnotationQuestion, CreateProjectParams, DatasetConfig,
+                                        DatasetDataType, QuestionType, RotationConfig)
+    # NB: labellerr.core.schemas.CreateTemplateParams is the *projects* variant (needs client_id);
+    # create_template() needs the one from schemas.annotation_templates. See SDK_FEEDBACK.md #13.
+    from labellerr.core.schemas.annotation_templates import CreateTemplateParams
 
     L = cfg["labellerr"]
     ids_path = Path(L["ids_file"])

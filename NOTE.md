@@ -54,8 +54,14 @@ Most of the saving comes from fixing pre-labels instead of drawing boxes, not fr
 → project → COCO pre-annotations uploaded in two files, flagged images with `conf_bucket="low"`
 and auto-accepted images with `conf_bucket="high"`, then a one-file trial of
 `bulk_assign_files(new_status="review")`. IDs are saved in `results/labellerr_ids.json`, and re-runs
-reuse them. **Status: _[to fill in after the live run]_.**
-Friction points are in `SDK_FEEDBACK.md`.
+reuse them (verified: a second run created nothing new). **Live result:** dataset (100 files),
+template and project were created, and both pre-annotation jobs returned `completed`
+(low: 62 images / 196 boxes; high: 32 images / 47 boxes; the 6 zero-detection images have no
+pre-labels). **What didn't work:** the review-status trial. `list_files` first rejected the
+SDK-documented dict query, then returned 0 project files, so no `file_id` could be resolved and
+`bulk_assign_files` was never called. I stopped after 2 attempts, as agreed. Flagged images are
+therefore marked by confidence bucket only, with reasons in `per_image.csv`.
+Friction points (16) are in `SDK_FEEDBACK.md`.
 
 **Limitations & next steps.** 100 images is a small calibration set: ±1 error moves precision
 by about 3 points, so the threshold needs a held-out set (or bootstrap intervals) before real use.
