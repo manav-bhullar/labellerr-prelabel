@@ -23,10 +23,15 @@ ENV = ("LABELLERR_API_KEY", "LABELLERR_API_SECRET", "LABELLERR_CLIENT_ID")
 REVIEW_STATUS = "review"  # status name used in the SDK source (constants.LOCAL_EXPORT_STATUS, tests)
 
 
+def _env(k: str) -> str:
+    """Read a credential, tolerating stray whitespace / trailing ';' pasted into env settings."""
+    return (os.environ.get(k) or "").strip().rstrip(";").strip()
+
+
 def _scrub(msg) -> str:
     s = str(msg)
     for k in ENV:
-        v = os.environ.get(k)
+        v = _env(k)
         if v:
             s = s.replace(v, f"<{k}>")
     return s[:500]
@@ -88,7 +93,7 @@ def _find_file_id(project, file_name: str) -> str | None:
 
 
 def sync(cfg: dict, image_dir: Path, images: list[dict], preds: dict, rows: list[dict]) -> dict:
-    missing = [k for k in ENV if not os.environ.get(k)]
+    missing = [k for k in ENV if not _env(k)]
     if missing:
         print(f"      Labellerr skipped: missing env var(s) {missing}")
         return {"status": "skipped_missing_credentials", "missing_env": missing}
@@ -103,8 +108,7 @@ def sync(cfg: dict, image_dir: Path, images: list[dict], preds: dict, rows: list
     L = cfg["labellerr"]
     ids_path = Path(L["ids_file"])
     ids = json.loads(ids_path.read_text()) if ids_path.exists() else {}
-    client = LabellerrClient(api_key=os.environ[ENV[0]], api_secret=os.environ[ENV[1]],
-                             client_id=os.environ[ENV[2]])
+    client = LabellerrClient(api_key=_env(ENV[0]), api_secret=_env(ENV[1]), client_id=_env(ENV[2]))
     log = {"status": "started"}
     try:
         # 1. dataset
