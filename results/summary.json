@@ -1,0 +1,70 @@
+{
+  "n_images": 100,
+  "classes": [
+    "person",
+    "car",
+    "dog"
+  ],
+  "model": "yolov8n.pt",
+  "box_conf": 0.25,
+  "target_precision": 0.9,
+  "threshold": 0.77,
+  "count_cap_p95": 6.0,
+  "n_auto_accepted": 32,
+  "n_flagged": 68,
+  "pct_auto_accepted": 32.0,
+  "pct_flagged": 68.0,
+  "auto_accepted_precision": 0.9062,
+  "auto_accepted_errors": 3,
+  "auto_accepted_error_rate": 0.0938,
+  "flagged_that_were_actually_correct": 24,
+  "flag_reason_counts": {
+    "low_min_conf": 62,
+    "zero_detections": 6,
+    "many_detections": 2
+  },
+  "n_zero_detections": 6,
+  "overall_image_accuracy_no_review": 0.53,
+  "time_estimate_note": "rough estimate from assumed per-image times, not a measurement",
+  "time_assumptions_s": {
+    "manual_label_s": 30,
+    "verify_s": 3,
+    "fix_s": 12
+  },
+  "time_estimate": {
+    "manual_label_s": 30,
+    "baseline_min": 50.0,
+    "pipeline_min": 17.0,
+    "saved_min": 33.0,
+    "saved_pct": 66.0
+  },
+  "time_sensitivity": [
+    {
+      "manual_label_s": 20,
+      "baseline_min": 33.3,
+      "pipeline_min": 16.0,
+      "saved_min": 17.3,
+      "saved_pct": 52.0
+    },
+    {
+      "manual_label_s": 30,
+      "baseline_min": 50.0,
+      "pipeline_min": 17.0,
+      "saved_min": 33.0,
+      "saved_pct": 66.0
+    },
+    {
+      "manual_label_s": 60,
+      "baseline_min": 100.0,
+      "pipeline_min": 20.0,
+      "saved_min": 80.0,
+      "saved_pct": 80.0
+    }
+  ],
+  "labellerr": {
+    "status": "skipped_missing_credentials",
+    "missing_env": [
+      "LABELLERR_API_KEY"
+    ]
+  }
+}

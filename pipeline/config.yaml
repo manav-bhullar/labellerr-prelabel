@@ -1,0 +1,43 @@
+# All tunable knobs live here. Paths are relative to the repo root.
+
+data:
+  annotations: data/raw/annotations/instances_val2017.json
+  image_dir: data/images            # selected images are downloaded here
+  image_url: http://images.cocodataset.org/val2017/{file_name}
+  classes: [person, car, dog]       # COCO category names
+  n_images: 100
+  per_class: 34                     # images sampled per "anchor" class (≈ n_images / len(classes))
+  max_gt_per_image: 6               # skip crowded scenes (hard to review either way)
+  min_gt_area: 1024                 # GT boxes < 32x32 px (COCO "small") are ignored: neither required nor counted as FP
+  seed: 42
+
+model:
+  weights: yolov8n.pt               # downloaded by ultralytics on first run
+  box_conf: 0.25                    # boxes >= this become pre-labels (ultralytics default)
+  iou_nms: 0.7
+  imgsz: 640
+  device: cpu
+
+calibration:
+  match_iou: 0.5
+  target_precision: 0.90            # precision of the auto-accepted set (0.95 unreachable here, see NOTE.md)
+  sweep: {start: 0.05, stop: 0.95, step: 0.01}
+  count_percentile: 95              # flag images with more detections than this percentile
+  # Image score = min confidence over the image's pre-label boxes.
+  # Auto-accept iff: score >= threshold AND >= 1 detection AND count <= p95 count.
+
+time_model:                         # rough assumptions, NOT measurements
+  manual_label_s: 30                # label one image from scratch
+  verify_s: 3                       # glance at + accept an auto-accepted pre-label
+  fix_s: 12                         # review + correct a flagged pre-label
+  sensitivity_manual_s: [20, 30, 60]
+
+labellerr:
+  dataset_name: labellerr-prelabel-coco100
+  project_name: COCO-100 pre-label + review (person/car/dog)
+  template_name: coco100-person-car-dog-bbox
+  colors: {person: "#E53935", car: "#1E88E5", dog: "#43A047"}
+  ids_file: results/labellerr_ids.json
+  annotation_format: coco_json
+
+results_dir: results

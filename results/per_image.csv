@@ -1,0 +1,101 @@
+file_name,n_gt,n_det,min_conf,mean_conf,classes_pred,tp,fp,fn,correct,flagged,flag_reason,decision
+000000013659.jpg,5,6,0.3783,0.6235,person,5,1,0,False,True,low_min_conf(<0.77),review
+000000014226.jpg,1,1,0.6963,0.6963,person,1,0,0,True,True,low_min_conf(<0.77),review
+000000017029.jpg,2,4,0.2977,0.4069,car dog,1,1,1,False,True,low_min_conf(<0.77),review
+000000017379.jpg,2,0,,,,0,0,2,False,True,zero_detections,review
+000000018150.jpg,2,2,0.7049,0.7557,person,2,0,0,True,True,low_min_conf(<0.77),review
+000000043737.jpg,2,4,0.3176,0.5368,car,2,0,0,True,True,low_min_conf(<0.77),review
+000000050145.jpg,2,2,0.4497,0.6798,person,2,0,0,True,True,low_min_conf(<0.77),review
+000000053626.jpg,4,4,0.8531,0.8763,person,4,0,0,True,False,,auto_accept
+000000060835.jpg,1,0,,,,0,0,1,False,True,zero_detections,review
+000000060899.jpg,1,1,0.8688,0.8688,person,1,0,0,True,False,,auto_accept
+000000066706.jpg,3,0,,,,0,0,3,False,True,zero_detections,review
+000000078823.jpg,4,3,0.7666,0.8409,car dog,3,0,1,False,True,low_min_conf(<0.77),review
+000000081766.jpg,3,3,0.3225,0.6138,dog,3,0,0,True,True,low_min_conf(<0.77),review
+000000086956.jpg,3,3,0.5741,0.8013,person,3,0,0,True,True,low_min_conf(<0.77),review
+000000087144.jpg,5,5,0.3287,0.7289,car person,5,0,0,True,True,low_min_conf(<0.77),review
+000000088951.jpg,2,3,0.5809,0.7093,dog person,2,1,0,False,True,low_min_conf(<0.77),review
+000000100624.jpg,5,5,0.2528,0.7026,car person,4,1,1,False,True,low_min_conf(<0.77),review
+000000102805.jpg,3,6,0.251,0.5415,car person,3,2,0,False,True,low_min_conf(<0.77),review
+000000111036.jpg,1,1,0.8748,0.8748,car,1,0,0,True,False,,auto_accept
+000000126110.jpg,1,2,0.3127,0.3647,person,0,1,1,False,True,low_min_conf(<0.77),review
+000000127263.jpg,4,3,0.4888,0.754,car person,3,0,1,False,True,low_min_conf(<0.77),review
+000000128748.jpg,3,3,0.8321,0.8578,person,3,0,0,True,False,,auto_accept
+000000134112.jpg,1,1,0.8101,0.8101,dog,1,0,0,True,False,,auto_accept
+000000138492.jpg,1,1,0.9004,0.9004,dog,1,0,0,True,False,,auto_accept
+000000142971.jpg,4,5,0.4628,0.6862,person,4,1,0,False,True,low_min_conf(<0.77),review
+000000144333.jpg,5,4,0.3537,0.6058,car person,3,1,2,False,True,low_min_conf(<0.77),review
+000000146155.jpg,5,5,0.2608,0.5673,person,4,1,1,False,True,low_min_conf(<0.77),review
+000000151962.jpg,3,2,0.7051,0.7379,car dog,2,0,1,False,True,low_min_conf(<0.77),review
+000000152771.jpg,1,2,0.4704,0.4908,car,1,1,0,False,True,low_min_conf(<0.77),review
+000000157365.jpg,5,6,0.4707,0.7109,car person,5,1,0,False,True,low_min_conf(<0.77),review
+000000160864.jpg,6,7,0.4812,0.7937,person,6,1,0,False,True,low_min_conf(<0.77);many_detections(>6=p95),review
+000000179112.jpg,1,1,0.9088,0.9088,person,1,0,0,True,False,,auto_accept
+000000179265.jpg,1,2,0.3965,0.6252,car,1,1,0,False,True,low_min_conf(<0.77),review
+000000185250.jpg,2,3,0.284,0.7091,dog person,2,0,0,True,True,low_min_conf(<0.77),review
+000000190140.jpg,2,2,0.7824,0.8475,dog person,2,0,0,True,False,,auto_accept
+000000194716.jpg,3,2,0.8355,0.8616,person,2,0,1,False,False,,auto_accept
+000000198805.jpg,2,3,0.2758,0.4454,car,2,1,0,False,True,low_min_conf(<0.77),review
+000000225670.jpg,1,1,0.6139,0.6139,person,0,1,1,False,True,low_min_conf(<0.77),review
+000000227511.jpg,2,6,0.3214,0.6641,car,2,0,0,True,True,low_min_conf(<0.77),review
+000000241326.jpg,1,1,0.8062,0.8062,dog,1,0,0,True,False,,auto_accept
+000000242411.jpg,3,5,0.3465,0.5648,car person,3,1,0,False,True,low_min_conf(<0.77),review
+000000253386.jpg,3,3,0.4963,0.6398,dog person,3,0,0,True,True,low_min_conf(<0.77),review
+000000260925.jpg,1,0,,,,0,0,1,False,True,zero_detections,review
+000000269113.jpg,3,3,0.8982,0.9196,dog,3,0,0,True,False,,auto_accept
+000000273232.jpg,2,2,0.8563,0.8791,dog person,2,0,0,True,False,,auto_accept
+000000276055.jpg,1,1,0.7983,0.7983,person,1,0,0,True,False,,auto_accept
+000000278705.jpg,4,6,0.29,0.5762,car person,4,2,0,False,True,low_min_conf(<0.77),review
+000000279714.jpg,2,2,0.2992,0.6087,car,1,1,1,False,True,low_min_conf(<0.77),review
+000000283037.jpg,1,1,0.8552,0.8552,car,1,0,0,True,False,,auto_accept
+000000283412.jpg,1,1,0.6197,0.6197,dog,1,0,0,True,True,low_min_conf(<0.77),review
+000000289594.jpg,2,2,0.5248,0.6979,car person,2,0,0,True,True,low_min_conf(<0.77),review
+000000292330.jpg,1,1,0.8591,0.8591,dog,1,0,0,True,False,,auto_accept
+000000294831.jpg,1,1,0.8682,0.8682,person,1,0,0,True,False,,auto_accept
+000000297681.jpg,1,1,0.7684,0.7684,car,1,0,0,True,True,low_min_conf(<0.77),review
+000000301421.jpg,1,0,,,,0,0,1,False,True,zero_detections,review
+000000310072.jpg,3,4,0.3026,0.7268,car,3,0,0,True,True,low_min_conf(<0.77),review
+000000315450.jpg,2,3,0.5277,0.6827,car,2,0,0,True,True,low_min_conf(<0.77),review
+000000318238.jpg,2,2,0.7604,0.7711,dog,2,0,0,True,True,low_min_conf(<0.77),review
+000000347930.jpg,1,1,0.9383,0.9383,dog,1,0,0,True,False,,auto_accept
+000000350148.jpg,6,7,0.2894,0.562,car person,5,2,1,False,True,low_min_conf(<0.77);many_detections(>6=p95),review
+000000355240.jpg,2,1,0.3871,0.3871,dog,1,0,1,False,True,low_min_conf(<0.77),review
+000000357459.jpg,2,1,0.9394,0.9394,dog,1,0,1,False,False,,auto_accept
+000000358525.jpg,1,1,0.7824,0.7824,person,1,0,0,True,False,,auto_accept
+000000365207.jpg,4,3,0.319,0.5016,car,2,1,2,False,True,low_min_conf(<0.77),review
+000000366611.jpg,1,1,0.8303,0.8303,dog,1,0,0,True,False,,auto_accept
+000000367195.jpg,2,1,0.5625,0.5625,dog,1,0,1,False,True,low_min_conf(<0.77),review
+000000368752.jpg,3,3,0.3586,0.6379,person,2,1,1,False,True,low_min_conf(<0.77),review
+000000369541.jpg,4,4,0.2618,0.4779,dog person,3,1,1,False,True,low_min_conf(<0.77),review
+000000369751.jpg,2,2,0.5633,0.7117,car,2,0,0,True,True,low_min_conf(<0.77),review
+000000371699.jpg,2,1,0.5187,0.5187,person,1,0,1,False,True,low_min_conf(<0.77),review
+000000384808.jpg,1,1,0.827,0.827,person,1,0,0,True,False,,auto_accept
+000000386912.jpg,1,1,0.9239,0.9239,person,1,0,0,True,False,,auto_accept
+000000389933.jpg,1,1,0.8606,0.8606,dog,1,0,0,True,False,,auto_accept
+000000394677.jpg,4,4,0.3805,0.6865,person,3,1,1,False,True,low_min_conf(<0.77),review
+000000399655.jpg,1,1,0.8218,0.8218,dog,1,0,0,True,False,,auto_accept
+000000417632.jpg,5,3,0.3635,0.6718,person,3,0,2,False,True,low_min_conf(<0.77),review
+000000424551.jpg,1,2,0.6871,0.799,person,1,0,0,True,True,low_min_conf(<0.77),review
+000000429011.jpg,1,2,0.6132,0.6915,car person,1,1,0,False,True,low_min_conf(<0.77),review
+000000439623.jpg,2,5,0.2695,0.5103,car,1,1,1,False,True,low_min_conf(<0.77),review
+000000441286.jpg,1,1,0.8854,0.8854,person,1,0,0,True,False,,auto_accept
+000000446522.jpg,1,1,0.9124,0.9124,dog,1,0,0,True,False,,auto_accept
+000000452891.jpg,1,2,0.4822,0.5424,dog,1,1,0,False,True,low_min_conf(<0.77),review
+000000454404.jpg,1,1,0.808,0.808,person,1,0,0,True,False,,auto_accept
+000000458702.jpg,2,1,0.7441,0.7441,car,1,0,1,False,True,low_min_conf(<0.77),review
+000000460683.jpg,2,2,0.7157,0.7593,person,2,0,0,True,True,low_min_conf(<0.77),review
+000000472623.jpg,3,3,0.7738,0.8282,person,3,0,0,True,False,,auto_accept
+000000474039.jpg,1,1,0.7528,0.7528,person,1,0,0,True,True,low_min_conf(<0.77),review
+000000474095.jpg,1,1,0.8605,0.8605,person,1,0,0,True,False,,auto_accept
+000000476119.jpg,3,5,0.3158,0.5888,car person,3,2,0,False,True,low_min_conf(<0.77),review
+000000490171.jpg,2,2,0.3122,0.4777,dog,1,1,1,False,True,low_min_conf(<0.77),review
+000000491213.jpg,1,4,0.3076,0.4019,car,1,0,0,True,True,low_min_conf(<0.77),review
+000000498286.jpg,2,2,0.6837,0.6874,car dog,2,0,0,True,True,low_min_conf(<0.77),review
+000000509403.jpg,4,4,0.7897,0.8593,dog person,4,0,0,True,False,,auto_accept
+000000511398.jpg,1,1,0.745,0.745,dog,1,0,0,True,True,low_min_conf(<0.77),review
+000000543043.jpg,2,1,0.9314,0.9314,car,1,0,1,False,False,,auto_accept
+000000546829.jpg,1,1,0.8668,0.8668,dog,1,0,0,True,False,,auto_accept
+000000554291.jpg,1,0,,,,0,0,1,False,True,zero_detections,review
+000000554579.jpg,4,4,0.7134,0.8211,dog person,4,0,0,True,True,low_min_conf(<0.77),review
+000000579321.jpg,2,3,0.4228,0.5309,dog person,2,1,0,False,True,low_min_conf(<0.77),review
+000000580418.jpg,3,4,0.2751,0.5303,car,3,1,0,False,True,low_min_conf(<0.77),review

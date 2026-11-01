@@ -1,0 +1,9 @@
+ultralytics>=8.3,<9
+pycocotools>=2.0.7
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+pyyaml>=6.0
+requests>=2.31
+# Labellerr SDK is not on PyPI; install from the official repo (pinned commit):
+labellerr-sdk @ git+https://github.com/Labellerr/SDKPython@37b56ff
