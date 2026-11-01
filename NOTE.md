@@ -63,10 +63,9 @@ accept clicks. I couldn't find where `conf_bucket` low/high appears in the UI, s
 isn't visible to reviewers yet; the flag and its reason per image live in `results/per_image.csv`.
 **Not done:** moving flagged files to a review status. `list_files` first rejected the
 SDK-documented dict query, then returned 0 files for a few minutes while the UI already showed 100,
-so `bulk_assign_files` was never called (stopped after 2 attempts, as agreed). The pipeline changed
-no file status. The 2 files the UI shows in Review (`…152771.jpg`, `…476119.jpg`) were moved at
-11:59–12:02 UTC, after my last write, with labelling time and a draft recorded, which is consistent
-with manual UI work. Neither is the trial file. 19 friction points are in `SDK_FEEDBACK.md`.
+so `bulk_assign_files` was never called (I stopped after 2 attempts). The pipeline changed
+no file status. 19 friction points are in `SDK_FEEDBACK.md`, including one security issue (#17):
+pre-annotation upload stores the API key in each file's `email_id` field.
 
 **Limitations & next steps.** 100 images is a small calibration set: ±1 error moves precision
 by about 3 points, so the threshold needs a held-out set (or bootstrap intervals) before real use.
