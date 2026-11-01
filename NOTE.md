@@ -58,10 +58,15 @@ reuse them (verified: a second run created nothing new). **Live result:** datase
 template and project were created, and both pre-annotation jobs returned `completed`
 (low: 62 images / 196 boxes; high: 32 images / 47 boxes; the 6 zero-detection images have no
 pre-labels). **What didn't work:** the review-status trial. `list_files` first rejected the
-SDK-documented dict query, then returned 0 project files, so no `file_id` could be resolved and
-`bulk_assign_files` was never called. I stopped after 2 attempts, as agreed. Flagged images are
-therefore marked by confidence bucket only, with reasons in `per_image.csv`.
-Friction points (16) are in `SDK_FEEDBACK.md`.
+SDK-documented dict query, then returned 0 files while the UI already showed 100 (a few
+minutes later it returned all 100). So no `file_id` was resolved and `bulk_assign_files` was
+never called. I stopped after 2 attempts, as agreed. Flagged images are therefore marked by
+confidence bucket only, with reasons in `per_image.csv`. The pipeline changed no file status.
+The 2 files the UI shows in Review (`000000152771.jpg`, `000000476119.jpg`, both now
+`cr_assigned`) were moved between 11:59 and 12:02 UTC, after my last write (~11:52). Their
+recorded labelling time and a saved draft are consistent with manual work in the web UI,
+and neither is the trial file (`000000013659.jpg`, still untouched).
+Friction points (18) are in `SDK_FEEDBACK.md`.
 
 **Limitations & next steps.** 100 images is a small calibration set: ±1 error moves precision
 by about 3 points, so the threshold needs a held-out set (or bootstrap intervals) before real use.
