@@ -50,23 +50,23 @@ Most of the saving comes from fixing pre-labels instead of drawing boxes, not fr
 | 30 | 50.0 min | 17.0 min | 66% |
 | 60 | 100.0 min | 20.0 min | 80% |
 
-**Labellerr.** Through SDK 1.3.2: dataset → annotation template (one bbox question per class)
-→ project → COCO pre-annotations uploaded in two files, flagged images with `conf_bucket="low"`
-and auto-accepted images with `conf_bucket="high"`, then a one-file trial of
-`bulk_assign_files(new_status="review")`. IDs are saved in `results/labellerr_ids.json`, and re-runs
-reuse them (verified: a second run created nothing new). **Live result:** dataset (100 files),
-template and project were created, and both pre-annotation jobs returned `completed`
-(low: 62 images / 196 boxes; high: 32 images / 47 boxes; the 6 zero-detection images have no
-pre-labels). **What didn't work:** the review-status trial. `list_files` first rejected the
-SDK-documented dict query, then returned 0 files while the UI already showed 100 (a few
-minutes later it returned all 100). So no `file_id` was resolved and `bulk_assign_files` was
-never called. I stopped after 2 attempts, as agreed. Flagged images are therefore marked by
-confidence bucket only, with reasons in `per_image.csv`. The pipeline changed no file status.
-The 2 files the UI shows in Review (`000000152771.jpg`, `000000476119.jpg`, both now
-`cr_assigned`) were moved between 11:59 and 12:02 UTC, after my last write (~11:52). Their
-recorded labelling time and a saved draft are consistent with manual work in the web UI,
-and neither is the trial file (`000000013659.jpg`, still untouched).
-Friction points (18) are in `SDK_FEEDBACK.md`.
+**Labellerr: verified end to end** (SDK 1.3.2, project `perla_lonely_marten_34549`). The pipeline
+creates a dataset (100 files) → annotation template (one bbox class each for person/car/dog) →
+project, then uploads COCO pre-annotations in two files: flagged images with `conf_bucket="low"`
+(62 images / 196 boxes) and auto-accepted ones with `conf_bucket="high"` (32 / 47). Both jobs
+returned `completed`; the 6 zero-detection images have nothing to upload. IDs are in
+`results/labellerr_ids.json`, and a re-run creates nothing new. **In the web UI** (checked by hand) the
+pre-labels show up in the Label tool's *AI Mode / Model Assisted* panel as ⚡ model suggestions, with a
+confidence slider and accept/reject buttons. They are *suggestions*, not annotations: the
+Annotations panel stays at 0 until one is accepted, so "verify" in the time model includes those
+accept clicks. I couldn't find where `conf_bucket` low/high appears in the UI, so the split by bucket
+isn't visible to reviewers yet; the flag and its reason per image live in `results/per_image.csv`.
+**Not done:** moving flagged files to a review status. `list_files` first rejected the
+SDK-documented dict query, then returned 0 files for a few minutes while the UI already showed 100,
+so `bulk_assign_files` was never called (stopped after 2 attempts, as agreed). The pipeline changed
+no file status. The 2 files the UI shows in Review (`…152771.jpg`, `…476119.jpg`) were moved at
+11:59–12:02 UTC, after my last write, with labelling time and a draft recorded, which is consistent
+with manual UI work. Neither is the trial file. 19 friction points are in `SDK_FEEDBACK.md`.
 
 **Limitations & next steps.** 100 images is a small calibration set: ±1 error moves precision
 by about 3 points, so the threshold needs a held-out set (or bootstrap intervals) before real use.
